@@ -1,5 +1,6 @@
 const {roundTrackers, roundAndSquareTrackers} = require("./trackers");
 console.clear();
+
 // We need to create algorithm that will check if string is "balanced" or not
 // string can be considered balanced if all open "tags", which open new "context"
 // have closing "tag" in correct place. Case with 0 opened/closed tags considered
