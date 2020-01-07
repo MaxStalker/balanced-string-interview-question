@@ -1,3 +1,4 @@
+const {roundTrackers, roundAndSquareTrackers} = require("./trackers");
 console.clear();
 // We need to create algorithm that will check if string is "balanced" or not
 // string can be considered balanced if all open "tags", which open new "context"
@@ -68,35 +69,6 @@ const stackAccumulator = (input, trackers) => {
     }
   }
   return stack;
-};
-
-const roundTrackers = {
-  isOpen: chr => chr === "(",
-  isClosing: chr => chr === ")",
-  isOpposite: (chr, target) => {
-    if (chr === "(") return target === ")";
-    if (chr === ")") return target === "(";
-    return false;
-  }
-};
-
-const roundAndSquareTrackers = {
-  isOpen: chr => "([".includes(chr),
-  isClosing: chr => "])".includes(chr),
-  isOpposite: (chr, target) => {
-    switch (true) {
-      case chr === "(":
-        return target === ")";
-      case chr === ")":
-        return target === "(";
-      case chr === "[":
-        return target === "]";
-      case chr === "]":
-        return target === "[";
-      default:
-        return null;
-    }
-  }
 };
 
 console.log("Check simple cases");
